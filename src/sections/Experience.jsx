@@ -1,4 +1,4 @@
-import { experienceData } from "../PortfolioData";
+import { experienceData } from '../PortfolioData';
 
 const Experience = () => (
   <div id="experience" className="background-alt">
@@ -6,7 +6,7 @@ const Experience = () => (
     <div id="experience-timeline">
       {experienceData.map((inst) => {
         return (
-          <div data-date={inst.date}>
+          <div data-date={inst.date} key={inst.company + inst.date}>
             <h3>{inst.company}</h3>
             <h4>{inst.subtitle}</h4>
             <p>{inst.description}</p>
@@ -17,6 +17,6 @@ const Experience = () => (
   </div>
 );
 
-Experience.displayName = "Experience";
+Experience.displayName = 'Experience';
 
 export default Experience;

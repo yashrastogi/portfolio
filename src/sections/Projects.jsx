@@ -1,4 +1,4 @@
-import { projectsData } from "../PortfolioData";
+import { projectsData } from '../PortfolioData';
 
 const Projects = () => (
   <div id="projects" className="background-alt">
@@ -7,18 +7,16 @@ const Projects = () => (
       <div className="row">
         {projectsData.map((inst) => {
           return (
-            <div className="project shadow-large">
+            <div className="project shadow-large" key={inst.name}>
               <div className="project-image">
                 <img src={inst.image} alt="" />
               </div>
               <div className="project-info">
                 <h3>{inst.name}</h3>
                 <p>{inst.description}</p>
-                {inst.linkType === "none" ? null : (
+                {inst.linkType === 'none' ? null : (
                   <a href={inst.link} rel="noreferrer" target="_blank">
-                    {inst.linkType === "project"
-                      ? "View Project"
-                      : "View Source"}
+                    {inst.linkType === 'project' ? 'View Project' : 'View Source'}
                   </a>
                 )}
               </div>
@@ -30,6 +28,6 @@ const Projects = () => (
   </div>
 );
 
-Projects.displayName = "Projects";
+Projects.displayName = 'Projects';
 
 export default Projects;

@@ -12,7 +12,7 @@ export default function Header(props) {
         </div>
         <ul id="menu" className="shadow">
           {props.sections.map((inst) => (
-            <li>
+            <li key={inst}>
               <a href={"#" + inst.toLowerCase()}>{inst}</a>
             </li>
           ))}

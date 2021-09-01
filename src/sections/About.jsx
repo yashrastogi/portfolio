@@ -1,4 +1,4 @@
-import {aboutString} from "../PortfolioData";
+import { aboutString } from '../PortfolioData';
 
 const About = () => (
   <div id="about">
@@ -15,6 +15,6 @@ const About = () => (
   </div>
 );
 
-About.displayName = "About";
+About.displayName = 'About';
 
 export default About;

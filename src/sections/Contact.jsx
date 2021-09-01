@@ -16,6 +16,6 @@ const Contact = () => (
   </div>
 );
 
-Contact.displayName = "Contact";
+Contact.displayName = 'Contact';
 
 export default Contact;
