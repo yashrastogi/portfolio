@@ -16,4 +16,6 @@ const Education = () => (
   </div>
 );
 
+Education.displayName = "Education";
+
 export default Education;

@@ -16,7 +16,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <Header sections={sections.map((i) => i.name)} />
+      <Header sections={sections.map((i) => i.displayName)} />
       <Cover />
 
       {sections.map((SectionComponent) => (

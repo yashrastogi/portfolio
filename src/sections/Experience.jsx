@@ -17,4 +17,6 @@ const Experience = () => (
   </div>
 );
 
+Experience.displayName = "Experience";
+
 export default Experience;

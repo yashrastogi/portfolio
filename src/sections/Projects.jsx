@@ -30,4 +30,6 @@ const Projects = () => (
   </div>
 );
 
+Projects.displayName = "Projects";
+
 export default Projects;

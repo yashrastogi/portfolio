@@ -11,4 +11,6 @@ const Skills = () => (
   </div>
 );
 
+Skills.displayName = "Skills";
+
 export default Skills;
