@@ -33,12 +33,7 @@ const jQuerySetup = () => {
   // Scroll to first element
   $('#lead-down span').on('click', function () {
     var scrollDistance = $('#lead').next().offset().top;
-    $('html, body').animate(
-      {
-        scrollTop: scrollDistance + 'px'
-      },
-      500
-    );
+    $('html, body').animate({ scrollTop: scrollDistance + 'px' }, 500);
   });
 
   // Create timeline

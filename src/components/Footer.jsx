@@ -14,11 +14,7 @@ export default function Footer() {
           <div className="col-sm-5 social">
             <ul>
               <li>
-                <a
-                  href="https://github.com/yashrastogi"
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <a href="https://github.com/yashrastogi" rel="noreferrer" target="_blank">
                   <i className="fa fa-github" aria-hidden="true"></i>
                 </a>
               </li>
