@@ -1,6 +1,4 @@
-import { aboutString } from '../PortfolioData';
-
-const About = () => (
+const About = (props) => (
   <div id="about">
     <div className="container">
       <div className="row">
@@ -8,7 +6,7 @@ const About = () => (
           <h2 className="heading">About Me</h2>
         </div>
         <div className="col-md-8">
-          <p>{aboutString}</p>
+          <p>{props.data.aboutString}</p>
         </div>
       </div>
     </div>

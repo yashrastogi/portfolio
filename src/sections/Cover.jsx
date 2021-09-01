@@ -1,10 +1,10 @@
-const Cover = () => (
+const Cover = (props) => (
   <div id="lead">
     <div id="lead-content">
-      <h1>Yash Rastogi</h1>
-      <h2>Software Engineer</h2>
+      <h1>{props.data.personName}</h1>
+      <h2>{props.data.personField}</h2>
       <a
-        href="https://drive.google.com/file/d/1bNpUez9BZE3AVGmboLIwhRF5YAnSqYZX/view?usp=sharing"
+        href={props.data.resumeUrl}
         className="btn-rounded-white"
         rel="noreferrer"
         target="_blank"

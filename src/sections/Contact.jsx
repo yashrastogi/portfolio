@@ -1,8 +1,8 @@
-const Contact = () => (
+const Contact = (props) => (
   <div id="contact">
     <h2>Get in Touch</h2>
     <div id="contact-form">
-      <form method="POST" action="https://formspree.io/f/yashrastogi@gmail.com">
+      <form method="POST" action={props.data.formspreeEndpoint}>
         <input
           type="hidden"
           name="_subject"

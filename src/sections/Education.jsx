@@ -1,9 +1,7 @@
-import { educationData } from '../PortfolioData';
-
-const Education = () => (
+const Education = (props) => (
   <div id="education">
     <h2 className="heading">Education</h2>
-    {educationData.map((entry) => {
+    {props.data.educationData.map((entry) => {
       return (
         <div className="education-block" key={entry.name}>
           <h3>{entry.name}</h3>

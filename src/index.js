@@ -1,17 +1,37 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import React, { useEffect } from 'react';
+import Header from './components/Header';
+import Cover from './sections/Cover';
+import About from './sections/About';
+import Experience from './sections/Experience';
+import Education from './sections/Education';
+import Projects from './sections/Projects';
+import Skills from './sections/Skills';
+import Contact from './sections/Contact';
+import Footer from './components/Footer';
+import jQuerySetup from './tools/jQuerySetup';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+export default function App(props) {
+  useEffect(jQuerySetup);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+  const sections = [About, Experience, Education, Projects, Skills, Contact];
+
+  return (
+    <React.StrictMode>
+      <Header sections={sections.map((i) => i.displayName)} />
+      <Cover data={props.data} />
+
+      {sections.map((Component) => (
+        <Component data={props.data} key={Component.displayName} />
+      ))}
+
+      <Footer />
+    </React.StrictMode>
+  );
+}
+
+fetch(
+  'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
+)
+  .then((r) => r.json())
+  .then((data) => ReactDOM.render(<App data={data} />, document.getElementById('root')));

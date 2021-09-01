@@ -1,11 +1,9 @@
-import { projectsData } from '../PortfolioData';
-
-const Projects = () => (
+const Projects = (props) => (
   <div id="projects" className="background-alt">
     <h2 className="heading">Projects</h2>
     <div className="container">
       <div className="row">
-        {projectsData.map((inst) => {
+        {props.data.projectsData.map((inst) => {
           return (
             <div className="project shadow-large" key={inst.name}>
               <div className="project-image">
