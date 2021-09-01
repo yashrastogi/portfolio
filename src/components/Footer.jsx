@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function Footer(props) {
   return (
     <footer>
       <div className="container">
@@ -13,20 +13,13 @@ export default function Footer() {
           </div>
           <div className="col-sm-5 social">
             <ul>
-              <li>
-                <a href="https://github.com/yashrastogi" rel="noreferrer" target="_blank">
-                  <i className="fa fa-github" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com/in/yashrastogi-ml"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-              </li>
+              {props.data.footerLinks.map((linkDict) => (
+                <li key={linkDict.link}>
+                  <a href={linkDict.link} rel="noreferrer" target="_blank">
+                    <i className={'fa ' + linkDict.iconClass} aria-hidden="true"></i>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

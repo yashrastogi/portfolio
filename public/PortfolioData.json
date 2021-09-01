@@ -87,5 +87,9 @@
       "linkType": "none"
     }
   ],
-  "formspreeEndpoint": "https://formspree.io/f/xleaabeq"
+  "formspreeEndpoint": "https://formspree.io/f/xleaabeq",
+  "footerLinks": [
+    { "link": "https://github.com/yashrastogi", "iconClass": "fa-github" },
+    { "link": "https://linkedin.com/in/yashrastogi-ml", "iconClass": "fa-linkedin" }
+  ]
 }

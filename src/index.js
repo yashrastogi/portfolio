@@ -25,13 +25,14 @@ export default function App(props) {
         <Component data={props.data} key={Component.displayName} />
       ))}
 
-      <Footer />
+      <Footer data={props.data} />
     </React.StrictMode>
   );
 }
 
-fetch(
-  'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
-)
+// fetch(
+//   'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
+// )
+fetch('PortfolioData.json')
   .then((r) => r.json())
   .then((data) => ReactDOM.render(<App data={data} />, document.getElementById('root')));
