@@ -2,7 +2,7 @@ const Contact = () => (
   <div id="contact">
     <h2>Get in Touch</h2>
     <div id="contact-form">
-      <form method="POST" action="https://formspree.io/yashrastogi@gmail.com">
+      <form method="POST" action="https://formspree.io/f/yashrastogi@gmail.com">
         <input
           type="hidden"
           name="_subject"
