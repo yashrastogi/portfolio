@@ -1,11 +1,18 @@
 const experienceData = [
   {
     company: 'Ernst & Young',
+    date: 'August 2020 - Present',
+    subtitle: 'Senior Analyst',
+    description: `•  Delivering vulnerability management lifecycle: Assessment, tracking, and verification
+•  Develop project concepts and maintain optimal workflow`
+  },
+  {
+    company: 'Ernst & Young',
     date: 'January 2020 – July 2020',
     subtitle: 'Summer Trainee / Risk Advisory - Cybersecurity',
-    description: `Handled vulnerability management lifecycle for new nodes onboarding,
-    researched SIEM use cases for telecom nodes, and audited data for
-    compliance with ISO 27001 ISMS framework.`
+    description: `•  Handled vulnerability management lifecycle for new nodes onboarding
+•  Researched SIEM use cases for telecom nodes
+•  Audited data for compliance with ISO 27001 ISMS framework`
   }
 ];
 
