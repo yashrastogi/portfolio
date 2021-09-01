@@ -20,7 +20,7 @@ const educationData = [
   {
     name: 'NIIT University',
     date: '2016 - Present',
-    subtitle: 'Bachelor of Technology in Computer Science',
+    subtitle: 'Bachelor of Technology - Computer Science',
     score: '7.85 CGPA'
   },
   {

@@ -13,7 +13,6 @@ const Experience = () => (
           </div>
         );
       })}
-      {console.log(experienceData[0].description)}
     </div>
   </div>
 );
