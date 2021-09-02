@@ -1,7 +1,6 @@
 import $ from 'jquery';
 
 const jQuerySetup = () => {
-  console.log('Loaded jQuery Setup Script');
   // Remove no-js class
   $('html').removeClass('no-js');
 
