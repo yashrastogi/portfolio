@@ -1,6 +1,8 @@
-import ReactDOM from 'react-dom';
 import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import jQuerySetup from './tools/jQuerySetup';
 import Cover from './sections/Cover';
 import About from './sections/About';
 import Experience from './sections/Experience';
@@ -8,8 +10,6 @@ import Education from './sections/Education';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import Contact from './sections/Contact';
-import Footer from './components/Footer';
-import jQuerySetup from './tools/jQuerySetup';
 
 export default function App(props) {
   useEffect(jQuerySetup);
@@ -30,9 +30,9 @@ export default function App(props) {
   );
 }
 
-// fetch(
-//   'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
-// )
-fetch('PortfolioData.json')
+fetch(
+  'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
+)
+// fetch('PortfolioData.json')
   .then((r) => r.json())
   .then((data) => ReactDOM.render(<App data={data} />, document.getElementById('root')));
