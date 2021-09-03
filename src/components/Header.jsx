@@ -18,7 +18,7 @@ export default function Header(props) {
     themeColor: '#3498db',
     darkMode: false
   });
-  const darkBgColor = '#181A1B';
+  const darkBgColor = 'rgb(32, 32, 32)';
 
   let theme = createTheme({
     palette: {
@@ -31,7 +31,8 @@ export default function Header(props) {
   const handleThemeDialogClose = () => setState({ ...state, themeDialogOpen: false });
   const handleThemeDialogOpen = () => setState({ ...state, themeDialogOpen: true });
   const handleDarkModeChange = () => {
-    setState({ ...state, darkMode: !state['darkMode'] });
+    document.body.className = !state.darkMode ? 'theme-dark' : 'theme-light';
+    setState({ ...state, darkMode: !state.darkMode });
   };
   const handleColorChange = async (e) => {
     setState({ ...state, themeColor: e.target.value });

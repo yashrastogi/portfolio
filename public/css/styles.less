@@ -22,59 +22,68 @@
 */
 
 // Define base and accent colors
-@base-color: #3498db;
+
+@base-color: hsl(204.1, 69.9%, 53.1%);
 @base-color-hover: darken(@base-color, 10%);
-@darken-background-alt-5: darken(@background-alt, 5%);
 @darken-base-color-15: darken(@base-color, 15%);
 @darken-base-color-25: darken(@base-color, 25%);
-@lighten-text-25: lighten(@text, 25%);
 @lighten-base-color-25: lighten(@base-color, 25%);
+@lighten-text-25: hsl(var(--text-c1), calc(var(--text-c2) + 25%));
+@darken-background-alt-5: hsl(
+  var(--background-alt-c1),
+  calc(var(--background-alt-c2) - 5%)
+);
 
 /*
     Light Theme
 */
 
-// Define background colors
-@background: #fff;
-@background-alt: #f2f2f5;
+.theme-light {
+  // Define background colors
+  --white: #fff;
+  --background: var(--white);
+  --background-alt: hsl(240, 13%, 95.5%);
+  --background-alt-c1: 240, 13%;
+  --background-alt-c2: 95.5%;
+  // Define border colors
+  --border: #dcd9d9;
+  // Define text colors
+  --heading: #374054;
+  --text: hsl(207.3, 8.7%, 49.8%);
+  --text-c1: 207.3, 8.7%;
+  --text-c2: 49.8%;
+  // Misc
+  --a-hover-color: #eee;
+  --vtimeline-date-color: #374054;
+}
 
-// Define border colors
-@border: #dcd9d9;
-
-// Define text colors
-@heading: #374054;
-@text: #74808a;
-
-@white: #fff;
-@a-hover-color: #eee;
 @shadow-color: rgba(0, 0, 0, 0.12);
 @shadow-color-1: rgba(0, 0, 0, 0.24);
 @shadow-large-color: rgba(0, 0, 0, 0.08);
 @shadow-large-color-2: rgba(0, 0, 0, 0.15);
-@vtimeline-date-color: #374054;
 
 /*
     Dark Theme 
 */
 
-// // Define background colors
-// @background: rgb(32, 32, 32);
-// @background-alt: rgb(24, 24, 24);
-
-// // Define border colors
-// @border: #666666;
-
-// // Define text colors
-// @heading: rgb(219, 219, 219);
-// @text: #74808a;
-
-// @white: rgb(24, 25, 27);
-// @a-hover-color: rgb(48, 48, 48);
-// @vtimeline-date-color: #a3a3a3;
-// @shadow-color: rgba(0, 0, 0, 0.12);
-// @shadow-color-1: rgba(0, 0, 0, 0.24);
-// @shadow-large-color: rgba(0, 0, 0, 0.08);
-// @shadow-large-color-2: rgba(0, 0, 0, 0.15);
+.theme-dark {
+  // Define background colors
+  --white: rgb(32, 32, 32);
+  --background: var(--white);
+  --background-alt: hsl(0,0%,9.4%);
+  --background-alt-c1: 0, 0%;
+  --background-alt-c2: 9.4%;
+  // Define border colors
+  --border: #666666;
+  // Define text colors
+  --heading: rgb(219, 219, 219);
+  --text: hsl(207.3, 8.7%, 49.8%);
+  --text-c1: 207.3, 8.7%;
+  --text-c2: 49.8%;
+  // Misc
+  --a-hover-color: rgb(48, 48, 48);
+  --vtimeline-date-color: #a3a3a3;
+}
 
 /*
     ---------------------
@@ -115,7 +124,7 @@
 body {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
-  background-color: @background;
+  background-color: var(--background);
 
   &.active {
     overflow: hidden;
@@ -127,15 +136,15 @@ body {
 .no-js {
   #experience-timeline {
     > div {
-      background: @background;
+      background: var(--background);
       padding: 10px;
       margin-bottom: 10px;
-      border: 1px solid @border;
+      border: 1px solid var(--border);
 
       h3 {
         font-size: 1.5em;
         font-weight: 300;
-        color: @heading;
+        color: var(--heading);
         display: inline-block;
         margin: 0;
       }
@@ -148,7 +157,7 @@ body {
       }
 
       p {
-        color: @text;
+        color: var(--text);
         font-size: 0.9em;
         margin: 0;
       }
@@ -184,7 +193,7 @@ header {
 
   ul {
     display: inline-block;
-    background: @background;
+    background: var(--background);
     text-align: center;
     padding: 10px;
     margin: 0;
@@ -204,7 +213,7 @@ header {
     &:hover {
       color: @base-color-hover;
       text-decoration: none;
-      background: @a-hover-color;
+      background: var(--a-hover-color);
       border-radius: 4px;
     }
 
@@ -241,14 +250,14 @@ header {
   z-index: 20;
   padding: 0 7px;
   border-radius: 4px;
-  background: @background;
+  background: var(--background);
 }
 
 #mobile-menu-close {
   display: none;
   text-align: right;
   width: 100%;
-  background: @background;
+  background: var(--background);
   font-size: 1.5em;
   padding-right: 15px;
   padding-top: 10px;
@@ -274,7 +283,7 @@ footer {
 
   p {
     margin: 0;
-    color: @text;
+    color: var(--text);
   }
 }
 
@@ -293,7 +302,7 @@ footer {
   }
 
   i {
-    color: @text;
+    color: var(--text);
   }
 }
 
@@ -313,7 +322,7 @@ footer {
 
   a {
     display: block;
-    color: @text;
+    color: var(--text);
     padding: 10px;
 
     &:hover {
@@ -324,15 +333,15 @@ footer {
 
 .btn-rounded-white {
   display: inline-block;
-  color: @white;
+  color: var(--white);
   padding: 15px 25px;
-  border: 3px solid @white;
+  border: 3px solid var(--white);
   border-radius: 30px;
   .transition();
 
   &:hover {
     color: @base-color;
-    background: @white;
+    background: var(--white);
     text-decoration: none;
   }
 }
@@ -366,7 +375,7 @@ footer {
 }
 
 .background-alt {
-  background: @background-alt;
+  background: var(--background-alt);
 }
 
 /*
@@ -400,7 +409,7 @@ footer {
   }
 
   h1 {
-    color: @white;
+    color: var(--white);
     font-weight: 900;
     font-size: 5em;
     text-transform: uppercase;
@@ -436,7 +445,7 @@ footer {
   text-align: center;
   z-index: 10;
   bottom: 15px;
-  color: @white;
+  color: var(--white);
 
   span {
     cursor: pointer;
@@ -478,14 +487,14 @@ footer {
 
 #about {
   padding: 75px 15px;
-  border-bottom: 1px solid @border;
+  border-bottom: 1px solid var(--border);
 
   h2 {
-    color: @heading;
+    color: var(--heading);
   }
 
   p {
-    color: @text;
+    color: var(--text);
     margin: 0;
   }
 }
@@ -499,10 +508,10 @@ footer {
 #experience {
   padding: 50px 15px;
   text-align: center;
-  border-bottom: 1px solid @border;
+  border-bottom: 1px solid var(--border);
 
   h2 {
-    color: @heading;
+    color: var(--heading);
   }
 }
 
@@ -538,7 +547,7 @@ footer {
 
 .vtimeline-content {
   margin-left: 350px;
-  background: @white;
+  background: var(--white);
   border: 1px solid #e6e6e6;
   padding: 15px;
   border-radius: 3px;
@@ -547,7 +556,7 @@ footer {
   h3 {
     font-size: 1.5em;
     font-weight: 300;
-    color: @heading;
+    color: var(--heading);
     display: inline-block;
     margin: 0;
   }
@@ -560,7 +569,7 @@ footer {
   }
 
   p {
-    color: @text;
+    color: var(--text);
     font-size: 0.9em;
     margin: 0;
   }
@@ -574,7 +583,7 @@ footer {
 
 .vtimeline-icon {
   position: relative;
-  color: @white;
+  color: var(--white);
   width: 50px;
   height: 50px;
   background: @base-color;
@@ -597,7 +606,7 @@ footer {
   left: 0;
   top: 10px;
   font-weight: 300;
-  color: @vtimeline-date-color;
+  color: var(--vtimeline-date-color);
 }
 
 /*
@@ -608,11 +617,11 @@ footer {
 
 #education {
   padding: 50px 15px 20px 15px;
-  border-bottom: 1px solid @border;
+  border-bottom: 1px solid var(--border);
   text-align: center;
 
   h2 {
-    color: @heading;
+    color: var(--heading);
     margin-bottom: 50px;
   }
 }
@@ -621,23 +630,23 @@ footer {
   max-width: 700px;
   margin: 0 auto 30px auto;
   padding: 15px;
-  border: 1px solid @border;
+  border: 1px solid var(--border);
   text-align: left;
 
   h3 {
     font-weight: 500;
     float: left;
     margin: 0;
-    color: @heading;
+    color: var(--heading);
   }
 
   span {
-    color: @text;
+    color: var(--text);
     float: right;
   }
 
   h4 {
-    color: @text;
+    color: var(--text);
     clear: both;
     font-weight: 500;
     margin: 0 0 15px 0;
@@ -646,7 +655,7 @@ footer {
   p,
   ul {
     margin: 0;
-    color: @text;
+    color: var(--text);
     font-size: 0.9em;
   }
 
@@ -663,11 +672,11 @@ footer {
 
 #projects {
   padding: 50px 15px;
-  border-bottom: 1px solid @border;
+  border-bottom: 1px solid var(--border);
   text-align: center;
 
   h2 {
-    color: @heading;
+    color: var(--heading);
     margin-bottom: 50px;
   }
 }
@@ -677,7 +686,7 @@ footer {
   max-width: 900px;
   margin: 0 auto 30px auto;
   overflow: hidden;
-  background: @white;
+  background: var(--white);
   border-radius: 4px;
 }
 
@@ -695,12 +704,12 @@ footer {
   h3 {
     font-size: 1.5em;
     font-weight: 300;
-    color: @heading;
+    color: var(--heading);
     margin: 0 0 15px 0;
   }
 
   p {
-    color: @text;
+    color: var(--text);
     margin: 0 0 15px 0;
     font-size: 0.9em;
   }
@@ -734,7 +743,7 @@ footer {
   text-align: center;
 
   h2 {
-    color: @heading;
+    color: var(--heading);
     margin-bottom: 50px;
   }
 
@@ -749,7 +758,7 @@ footer {
     display: inline-block;
     margin: 7px;
     padding: 5px 10px;
-    color: @heading;
+    color: var(--heading);
     background: @darken-background-alt-5;
     list-style: none;
     cursor: default;
@@ -770,7 +779,7 @@ footer {
 
   h2 {
     margin: 0 0 15px 0;
-    color: @white;
+    color: var(--white);
     font-weight: 500;
   }
 }
@@ -788,10 +797,10 @@ footer {
     border: none;
     margin-bottom: 10px;
     background: @darken-base-color-15;
-    color: @white;
+    color: var(--white);
     .transition();
     .placeholder ({
-            color: @white;
+            color: var(--white);
         });;
 
     &:focus {
@@ -808,7 +817,7 @@ footer {
   button {
     display: block;
     width: 100%;
-    background: @white;
+    background: var(--white);
     border-radius: 4px;
     padding: 5px 10px;
     border: none;
@@ -832,10 +841,10 @@ footer {
 .optional-section {
   padding: 50px 15px;
   text-align: center;
-  border-top: 1px solid @border;
+  border-top: 1px solid var(--border);
 
   h2 {
-    color: @heading;
+    color: var(--heading);
   }
 }
 
@@ -843,18 +852,18 @@ footer {
   max-width: 700px;
   margin: 0 auto 30px auto;
   padding: 15px;
-  border: 1px solid @border;
-  background: @white;
+  border: 1px solid var(--border);
+  background: var(--white);
   text-align: left;
 
   h3 {
     font-weight: 500;
     margin: 0 0 15px 0;
-    color: @heading;
+    color: var(--heading);
   }
 
   h4 {
-    color: @text;
+    color: var(--text);
     clear: both;
     font-weight: 500;
     margin: 0 0 15px 0;
@@ -863,7 +872,7 @@ footer {
   p,
   ul {
     margin: 0 0 15px 0;
-    color: @text;
+    color: var(--text);
     font-size: 0.9em;
   }
 
