@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
 import {
   Button,
   Dialog,
   DialogActions,
   DialogContent,
   DialogTitle,
-  Switch,
-  withStyles,
+  FormControlLabel,
   FormGroup,
-  FormControlLabel
+  Switch,
+  withStyles
 } from '@material-ui/core';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import React, { useState } from 'react';
 
 export default function Header(props) {
   const [state, setState] = useState({
@@ -17,10 +18,21 @@ export default function Header(props) {
     themeColor: '#3498db',
     darkMode: false
   });
+  const darkBgColor = '#181A1B';
 
+  let theme = createTheme({
+    palette: {
+      type: state.darkMode ? 'dark' : 'light',
+      background: {
+        paper: state.darkMode ? darkBgColor : '#FFF'
+      }
+    }
+  });
   const handleThemeDialogClose = () => setState({ ...state, themeDialogOpen: false });
   const handleThemeDialogOpen = () => setState({ ...state, themeDialogOpen: true });
-  const handleDarkModeChange = () => setState({ ...state, darkMode: !state['darkMode'] });
+  const handleDarkModeChange = () => {
+    setState({ ...state, darkMode: !state['darkMode'] });
+  };
   const handleColorChange = async (e) => {
     setState({ ...state, themeColor: e.target.value });
     window.less.modifyVars({ 'base-color': e.target.value });
@@ -55,7 +67,7 @@ export default function Header(props) {
       aria-labelledby="form-dialog-title"
     >
       <DialogTitle id="form-dialog-title">Theme Picker</DialogTitle>
-      <DialogContent>
+      <DialogContent className="dialog">
         <FormGroup row>
           <FormControlLabel
             control={
@@ -78,7 +90,7 @@ export default function Header(props) {
                   height: '32px',
                   border: 'none',
                   margin: 4,
-                  backgroundColor: '#ffffff'
+                  backgroundColor: state.darkMode ? darkBgColor : '#fff'
                 }}
                 onChange={handleColorChange}
               />
@@ -93,7 +105,7 @@ export default function Header(props) {
     </Dialog>
   );
   return (
-    <React.Fragment>
+    <ThemeProvider theme={theme}>
       <div id="mobile-menu-open" className="shadow-large">
         <i className="fa fa-bars" aria-hidden="true"></i>
       </div>
@@ -115,6 +127,6 @@ export default function Header(props) {
         </ul>
       </header>
       {ThemePickerDialog}
-    </React.Fragment>
+    </ThemeProvider>
   );
 }

@@ -24,6 +24,15 @@
 // Define base and accent colors
 @base-color: #3498db;
 @base-color-hover: darken(@base-color, 10%);
+@darken-background-alt-5: darken(@background-alt, 5%);
+@darken-base-color-15: darken(@base-color, 15%);
+@darken-base-color-25: darken(@base-color, 25%);
+@lighten-text-25: lighten(@text, 25%);
+@lighten-base-color-25: lighten(@base-color, 25%);
+
+/*
+    Light Theme
+*/
 
 // Define background colors
 @background: #fff;
@@ -35,6 +44,37 @@
 // Define text colors
 @heading: #374054;
 @text: #74808a;
+
+@white: #fff;
+@a-hover-color: #eee;
+@shadow-color: rgba(0, 0, 0, 0.12);
+@shadow-color-1: rgba(0, 0, 0, 0.24);
+@shadow-large-color: rgba(0, 0, 0, 0.08);
+@shadow-large-color-2: rgba(0, 0, 0, 0.15);
+@vtimeline-date-color: #374054;
+
+/*
+    Dark Theme 
+*/
+
+// // Define background colors
+// @background: rgb(32, 32, 32);
+// @background-alt: rgb(24, 24, 24);
+
+// // Define border colors
+// @border: #666666;
+
+// // Define text colors
+// @heading: rgb(219, 219, 219);
+// @text: #74808a;
+
+// @white: rgb(24, 25, 27);
+// @a-hover-color: rgb(48, 48, 48);
+// @vtimeline-date-color: #a3a3a3;
+// @shadow-color: rgba(0, 0, 0, 0.12);
+// @shadow-color-1: rgba(0, 0, 0, 0.24);
+// @shadow-large-color: rgba(0, 0, 0, 0.08);
+// @shadow-large-color-2: rgba(0, 0, 0, 0.15);
 
 /*
     ---------------------
@@ -75,6 +115,7 @@
 body {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
+  background-color: @background;
 
   &.active {
     overflow: hidden;
@@ -163,7 +204,7 @@ header {
     &:hover {
       color: @base-color-hover;
       text-decoration: none;
-      background: #eee;
+      background: @a-hover-color;
       border-radius: 4px;
     }
 
@@ -247,7 +288,7 @@ footer {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 3px solid lighten(@text, 25%);
+    border: 3px solid @lighten-text-25;
     text-align: center;
   }
 
@@ -283,25 +324,25 @@ footer {
 
 .btn-rounded-white {
   display: inline-block;
-  color: #fff;
+  color: @white;
   padding: 15px 25px;
-  border: 3px solid #fff;
+  border: 3px solid @white;
   border-radius: 30px;
   .transition();
 
   &:hover {
     color: @base-color;
-    background: #fff;
+    background: @white;
     text-decoration: none;
   }
 }
 
 .shadow {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px @shadow-color, 0 1px 2px @shadow-color-1;
 }
 
 .shadow-large {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 6px @shadow-large-color, 0 3px 6px @shadow-large-color-2;
 }
 
 .heading {
@@ -359,7 +400,7 @@ footer {
   }
 
   h1 {
-    color: #fff;
+    color: @white;
     font-weight: 900;
     font-size: 5em;
     text-transform: uppercase;
@@ -368,7 +409,7 @@ footer {
   }
 
   h2 {
-    color: lighten(@base-color, 25%);
+    color: @lighten-base-color-25;
     font-weight: 500;
     font-size: 2.25em;
     margin-bottom: 15px;
@@ -395,7 +436,7 @@ footer {
   text-align: center;
   z-index: 10;
   bottom: 15px;
-  color: #fff;
+  color: @white;
 
   span {
     cursor: pointer;
@@ -404,7 +445,7 @@ footer {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 3px solid lighten(@base-color, 25%);
+    border: 3px solid @lighten-base-color-25;
     text-align: center;
   }
 
@@ -497,7 +538,7 @@ footer {
 
 .vtimeline-content {
   margin-left: 350px;
-  background: #fff;
+  background: @white;
   border: 1px solid #e6e6e6;
   padding: 15px;
   border-radius: 3px;
@@ -533,7 +574,7 @@ footer {
 
 .vtimeline-icon {
   position: relative;
-  color: #fff;
+  color: @white;
   width: 50px;
   height: 50px;
   background: @base-color;
@@ -556,7 +597,7 @@ footer {
   left: 0;
   top: 10px;
   font-weight: 300;
-  color: #374054;
+  color: @vtimeline-date-color;
 }
 
 /*
@@ -636,7 +677,7 @@ footer {
   max-width: 900px;
   margin: 0 auto 30px auto;
   overflow: hidden;
-  background: #fff;
+  background: @white;
   border-radius: 4px;
 }
 
@@ -709,7 +750,7 @@ footer {
     margin: 7px;
     padding: 5px 10px;
     color: @heading;
-    background: darken(@background-alt, 5%);
+    background: @darken-background-alt-5;
     list-style: none;
     cursor: default;
     font-size: 1.2em;
@@ -729,7 +770,7 @@ footer {
 
   h2 {
     margin: 0 0 15px 0;
-    color: #fff;
+    color: @white;
     font-weight: 500;
   }
 }
@@ -746,16 +787,16 @@ footer {
     border-radius: 4px;
     border: none;
     margin-bottom: 10px;
-    background: darken(@base-color, 15%);
-    color: #fff;
+    background: @darken-base-color-15;
+    color: @white;
     .transition();
     .placeholder ({
-            color: #fff;
+            color: @white;
         });;
 
     &:focus {
       outline: none;
-      background: darken(@base-color, 25%);
+      background: @darken-base-color-25;
     }
   }
 
@@ -767,7 +808,7 @@ footer {
   button {
     display: block;
     width: 100%;
-    background: #fff;
+    background: @white;
     border-radius: 4px;
     padding: 5px 10px;
     border: none;
@@ -803,7 +844,7 @@ footer {
   margin: 0 auto 30px auto;
   padding: 15px;
   border: 1px solid @border;
-  background: #fff;
+  background: @white;
   text-align: left;
 
   h3 {
