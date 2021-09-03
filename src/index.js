@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
+import jQuerySetup from './tools/jQuerySetup';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import jQuerySetup from './tools/jQuerySetup';
 import Cover from './sections/Cover';
 import About from './sections/About';
 import Experience from './sections/Experience';
@@ -13,7 +13,6 @@ import Contact from './sections/Contact';
 
 export default function App(props) {
   useEffect(jQuerySetup);
-
   const sections = [About, Experience, Education, Projects, Skills, Contact];
 
   return (
@@ -30,9 +29,9 @@ export default function App(props) {
   );
 }
 
-fetch(
-  'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
-)
-// fetch('PortfolioData.json')
+// fetch(
+//   'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
+// )
+fetch('PortfolioData.json')
   .then((r) => r.json())
   .then((data) => ReactDOM.render(<App data={data} />, document.getElementById('root')));
