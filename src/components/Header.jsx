@@ -22,6 +22,7 @@ export default function Header(props) {
 
   const [state, setState] = useState({
     themeDialogOpen: false,
+    currentColor: '#3498db',
     themeColor: '#3498db',
     darkMode: false
   });
@@ -41,25 +42,26 @@ export default function Header(props) {
     document.body.className = !state.darkMode ? 'theme-dark' : 'theme-light';
     setState({ ...state, darkMode: !state.darkMode });
   };
-  const handleColorChange = async (e) => {
-    setState({ ...state, themeColor: e.target.value });
-    document.documentElement.style.setProperty('--base-color', e.target.value);
-    document.documentElement.style.setProperty('--base-color-hover', darken(e.target.value, 0.1));
-    document.documentElement.style.setProperty('--darken-base-color-15', darken(e.target.value, 0.15));
-    document.documentElement.style.setProperty('--darken-base-color-25', darken(e.target.value, 0.25));
-    document.documentElement.style.setProperty('--lighten-base-color-25', lighten(e.target.value, 0.25));
-    document.documentElement.style.setProperty('--rgba-base-color-0', alpha(e.target.value, 0));
-    document.documentElement.style.setProperty('--rgba-base-color-hover-0-8', alpha(darken(e.target.value, 0.1), 0.8));
-  };
+  const handleColorChange = async (e) => setState({ ...state, currentColor: e.target.value });
+  const submitColorChange = (e) => {
+    setState({ ...state, themeColor: state.currentColor });
+    document.body.style.setProperty('--base-color', e.target.value);
+    document.body.style.setProperty('--base-color-hover', darken(e.target.value, 0.1));
+    document.body.style.setProperty('--darken-base-color-15', darken(e.target.value, 0.15));
+    document.body.style.setProperty('--darken-base-color-25', darken(e.target.value, 0.25));
+    document.body.style.setProperty('--lighten-base-color-25', lighten(e.target.value, 0.25));
+    document.body.style.setProperty('--rgba-base-color-0', alpha(e.target.value, 0));
+    document.body.style.setProperty('--rgba-base-color-hover-0-8', alpha(darken(e.target.value, 0.1), 0.8));
+  }
 
   const StyledSwitch = withStyles({
     switchBase: {
-      color: state['themeColor'],
+      color: state.themeColor,
       '&$checked': {
-        color: state['themeColor']
+        color: state.themeColor
       },
       '&$checked + $track': {
-        backgroundColor: state['themeColor']
+        backgroundColor: state.themeColor
       }
     },
     checked: {},
@@ -70,7 +72,7 @@ export default function Header(props) {
   })(Switch);
 
   const StyledButton = withStyles({
-    root: { color: state['themeColor'] }
+    root: { color: state.themeColor }
   })(Button);
 
   const ThemePickerDialog = (
@@ -98,7 +100,7 @@ export default function Header(props) {
             control={
               <input
                 type="color"
-                value={state['themeColor']}
+                defaultValue={state.themeColor}
                 style={{
                   width: '32px',
                   height: '32px',
@@ -107,6 +109,7 @@ export default function Header(props) {
                   backgroundColor: state.darkMode ? darkBgColor : '#fff'
                 }}
                 onChange={handleColorChange}
+                onBlur={submitColorChange}
               />
             }
             label="Theme Color"
