@@ -23,16 +23,23 @@
 
 // Define base and accent colors
 
-@base-color: hsl(204.1, 69.9%, 53.1%);
-@base-color-hover: darken(@base-color, 10%);
-@darken-base-color-15: darken(@base-color, 15%);
-@darken-base-color-25: darken(@base-color, 25%);
-@lighten-base-color-25: lighten(@base-color, 25%);
-@lighten-text-25: hsl(var(--text-c1), calc(var(--text-c2) + 25%));
-@darken-background-alt-5: hsl(
-  var(--background-alt-c1),
-  calc(var(--background-alt-c2) - 5%)
-);
+:root {
+  --base-color: hsl(204.1, 69.9%, 53.1%);
+  --base-color-hover: hsl(204.1, 69.9%, 43.1%);
+  --base-color-rgb: 52, 152, 219;
+  --base-color-hover-rgb: 33, 125, 187;
+  --darken-base-color-15: hsl(204.1, 69.9%, 38.1%);
+  --darken-base-color-25: hsl(204.1, 69.9%, 28.1%);
+  --lighten-base-color-25: hsl(204.1, 69.9%, 78.1%);
+
+  --lighten-text-25: hsl(var(--text-c1), calc(var(--text-c2) + 25%));
+  --darken-background-alt-5: hsl(
+    var(--background-alt-c1),
+    calc(var(--background-alt-c2) - 5%)
+  );
+  --rgba-base-color-0: rgba(var(--base-color-rgb), 0);
+  --rgba-base-color-hover-0-8: rgba(var(--base-color-hover-rgb), 0.8);
+}
 
 @shadow-color: rgba(0, 0, 0, 0.12);
 @shadow-color-1: rgba(0, 0, 0, 0.24);
@@ -207,18 +214,18 @@ header {
 
   a {
     display: block;
-    color: @base-color;
+    color: var(--base-color);
     padding: 10px;
 
     &:hover {
-      color: @base-color-hover;
+      color: var(--base-color-hover);
       text-decoration: none;
       background: var(--a-hover-color);
       border-radius: 4px;
     }
 
     &:focus {
-      color: @base-color;
+      color: var(--base-color);
       text-decoration: none;
     }
   }
@@ -245,7 +252,7 @@ header {
   position: fixed;
   right: 15px;
   top: 10px;
-  color: @base-color;
+  color: var(--base-color);
   font-size: 1.5em;
   z-index: 20;
   padding: 0 7px;
@@ -262,7 +269,7 @@ header {
   padding-right: 15px;
   padding-top: 10px;
   cursor: pointer;
-  color: @base-color;
+  color: var(--base-color);
 
   span {
     font-size: 0.5em;
@@ -297,7 +304,7 @@ footer {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 3px solid @lighten-text-25;
+    border: 3px solid var(--lighten-text-25);
     text-align: center;
   }
 
@@ -326,7 +333,7 @@ footer {
     padding: 10px;
 
     &:hover {
-      color: @base-color;
+      color: var(--base-color);
     }
   }
 }
@@ -340,7 +347,7 @@ footer {
   .transition();
 
   &:hover {
-    color: @base-color;
+    color: var(--base-color);
     background: var(--white);
     text-decoration: none;
   }
@@ -370,7 +377,7 @@ footer {
     left: 0;
     right: 0;
     margin: 0 auto;
-    background: @base-color;
+    background: var(--base-color);
   }
 }
 
@@ -418,7 +425,7 @@ footer {
   }
 
   h2 {
-    color: @lighten-base-color-25;
+    color: var(--lighten-base-color-25);
     font-weight: 500;
     font-size: 2.25em;
     margin-bottom: 15px;
@@ -433,7 +440,7 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(@base-color-hover, 0.8);
+  background: var(--rgba-base-color-hover-0-8);
   z-index: 1;
 }
 
@@ -454,7 +461,7 @@ footer {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 3px solid @lighten-base-color-25;
+    border: 3px solid var(--lighten-base-color-25);
     text-align: center;
   }
 
@@ -529,7 +536,7 @@ footer {
     right: auto;
     height: 100%;
     width: 3px;
-    background: @base-color;
+    background: var(--base-color);
     z-index: 0;
   }
 
@@ -538,8 +545,8 @@ footer {
     content: '';
     width: 3px;
     height: 40px;
-    background: @base-color;
-    background: linear-gradient(to bottom, @base-color, rgba(@base-color, 0));
+    background: var(--base-color);
+    background: linear-gradient(to bottom, var(--base-color), var(--rgba-base-color-0));
     top: 100%;
     left: 303px;
   }
@@ -586,7 +593,7 @@ footer {
   color: var(--white);
   width: 50px;
   height: 50px;
-  background: @base-color;
+  background: var(--base-color);
   border-radius: 50%;
   float: left;
   z-index: 99;
@@ -715,7 +722,7 @@ footer {
   }
 
   a {
-    color: @base-color-hover;
+    color: var(--base-color-hover);
   }
 }
 
@@ -759,7 +766,7 @@ footer {
     margin: 7px;
     padding: 5px 10px;
     color: var(--heading);
-    background: @darken-background-alt-5;
+    background: var(--darken-background-alt-5);
     list-style: none;
     cursor: default;
     font-size: 1.2em;
@@ -774,7 +781,7 @@ footer {
 
 #contact {
   padding: 50px 15px;
-  background: @base-color;
+  background: var(--base-color);
   text-align: center;
 
   h2 {
@@ -796,7 +803,7 @@ footer {
     border-radius: 4px;
     border: none;
     margin-bottom: 10px;
-    background: @darken-base-color-15;
+    background: var(--darken-base-color-15);
     color: var(--white);
     .transition();
     .placeholder ({
@@ -805,7 +812,7 @@ footer {
 
     &:focus {
       outline: none;
-      background: @darken-base-color-25;
+      background: var(--darken-base-color-25);
     }
   }
 
@@ -821,7 +828,7 @@ footer {
     border-radius: 4px;
     padding: 5px 10px;
     border: none;
-    color: @base-color;
+    color: var(--base-color);
     font-weight: 700;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     .transition();
@@ -919,7 +926,6 @@ footer {
   #lead {
     height: auto;
     min-height: auto;
-    max-height: auto;
     padding: 100px 15px;
   }
 

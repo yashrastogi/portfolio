@@ -34,4 +34,4 @@ fetch(
 )
 // fetch('PortfolioData.json')
   .then((r) => r.json())
-  .then((data) => ReactDOM.render(<App data={data} />, document.getElementById('root')));
+  .then((data) => ReactDOM.render(<App data={data} />, document.body));

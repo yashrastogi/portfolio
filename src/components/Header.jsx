@@ -11,7 +11,7 @@ import {
   Switch,
   withStyles
 } from '@material-ui/core';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import { alpha, createTheme, darken, lighten, ThemeProvider } from '@material-ui/core/styles';
 import React, { useEffect, useState } from 'react';
 
 export default function Header(props) {
@@ -43,7 +43,13 @@ export default function Header(props) {
   };
   const handleColorChange = async (e) => {
     setState({ ...state, themeColor: e.target.value });
-    window.less.modifyVars({ 'base-color': e.target.value });
+    document.documentElement.style.setProperty('--base-color', e.target.value);
+    document.documentElement.style.setProperty('--base-color-hover', darken(e.target.value, 0.1));
+    document.documentElement.style.setProperty('--darken-base-color-15', darken(e.target.value, 0.15));
+    document.documentElement.style.setProperty('--darken-base-color-25', darken(e.target.value, 0.25));
+    document.documentElement.style.setProperty('--lighten-base-color-25', lighten(e.target.value, 0.25));
+    document.documentElement.style.setProperty('--rgba-base-color-0', alpha(e.target.value, 0));
+    document.documentElement.style.setProperty('--rgba-base-color-hover-0-8', alpha(darken(e.target.value, 0.1), 0.8));
   };
 
   const StyledSwitch = withStyles({
