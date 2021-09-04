@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import {
   Button,
   Dialog,
@@ -10,9 +12,14 @@ import {
   withStyles
 } from '@material-ui/core';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function Header(props) {
+  const useMountEffect = (fun) => useEffect(fun, []);
+  useMountEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) handleDarkModeChange();
+  });
+
   const [state, setState] = useState({
     themeDialogOpen: false,
     themeColor: '#3498db',

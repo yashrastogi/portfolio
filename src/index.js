@@ -29,9 +29,9 @@ export default function App(props) {
   );
 }
 
-// fetch(
-//   'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
-// )
-fetch('PortfolioData.json')
+fetch(
+  'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
+)
+// fetch('PortfolioData.json')
   .then((r) => r.json())
   .then((data) => ReactDOM.render(<App data={data} />, document.getElementById('root')));
