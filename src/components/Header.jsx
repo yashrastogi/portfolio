@@ -11,7 +11,13 @@ import {
   Switch,
   withStyles
 } from '@material-ui/core';
-import { alpha, createTheme, darken, lighten, ThemeProvider } from '@material-ui/core/styles';
+import {
+  alpha,
+  createTheme,
+  darken,
+  lighten,
+  ThemeProvider
+} from '@material-ui/core/styles';
 import React, { useEffect, useState } from 'react';
 
 export default function Header(props) {
@@ -22,7 +28,6 @@ export default function Header(props) {
 
   const [state, setState] = useState({
     themeDialogOpen: false,
-    currentColor: '#3498db',
     themeColor: '#3498db',
     darkMode: false
   });
@@ -42,17 +47,20 @@ export default function Header(props) {
     document.body.className = !state.darkMode ? 'theme-dark' : 'theme-light';
     setState({ ...state, darkMode: !state.darkMode });
   };
-  const handleColorChange = async (e) => setState({ ...state, currentColor: e.target.value });
   const submitColorChange = (e) => {
-    setState({ ...state, themeColor: state.currentColor });
-    document.body.style.setProperty('--base-color', e.target.value);
-    document.body.style.setProperty('--base-color-hover', darken(e.target.value, 0.1));
-    document.body.style.setProperty('--darken-base-color-15', darken(e.target.value, 0.15));
-    document.body.style.setProperty('--darken-base-color-25', darken(e.target.value, 0.25));
-    document.body.style.setProperty('--lighten-base-color-25', lighten(e.target.value, 0.25));
-    document.body.style.setProperty('--rgba-base-color-0', alpha(e.target.value, 0));
-    document.body.style.setProperty('--rgba-base-color-hover-0-8', alpha(darken(e.target.value, 0.1), 0.8));
-  }
+    const v = e.target.value;
+    setState({ ...state, themeColor: v });
+    document.body.style.setProperty('--base-color', v);
+    document.body.style.setProperty('--base-color-hover', darken(v, 0.1));
+    document.body.style.setProperty('--darken-base-color-15', darken(v, 0.15));
+    document.body.style.setProperty('--darken-base-color-25', darken(v, 0.25));
+    document.body.style.setProperty('--lighten-base-color-25', lighten(v, 0.25));
+    document.body.style.setProperty('--rgba-base-color-0', alpha(v, 0));
+    document.body.style.setProperty(
+      '--rgba-base-color-hover-0-8',
+      alpha(darken(v, 0.1), 0.8)
+    );
+  };
 
   const StyledSwitch = withStyles({
     switchBase: {
@@ -108,7 +116,6 @@ export default function Header(props) {
                   margin: 4,
                   backgroundColor: state.darkMode ? darkBgColor : '#fff'
                 }}
-                onChange={handleColorChange}
                 onBlur={submitColorChange}
               />
             }
