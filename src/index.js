@@ -17,7 +17,7 @@ export default function App(props) {
   document
     .querySelector('meta[name="description"]')
     .setAttribute('content', 'Digital Portfolio of ' + props.data.personName);
-
+  
   const sections = [About, Experience, Education, Projects, Skills, Contact];
 
   return (

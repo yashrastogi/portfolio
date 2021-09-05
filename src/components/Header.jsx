@@ -60,6 +60,7 @@ export default function Header(props) {
       '--rgba-base-color-hover-0-8',
       alpha(darken(v, 0.1), 0.8)
     );
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', v);
   };
 
   const StyledSwitch = withStyles({
