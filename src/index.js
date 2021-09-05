@@ -13,6 +13,11 @@ import Contact from './sections/Contact';
 
 export default function App(props) {
   useEffect(jQuerySetup);
+  document.title = 'Digital Portfolio - ' + props.data.personName;
+  document
+    .querySelector('meta[name="description"]')
+    .setAttribute('content', 'Digital Portfolio of ' + props.data.personName);
+
   const sections = [About, Experience, Education, Projects, Skills, Contact];
 
   return (
@@ -32,6 +37,6 @@ export default function App(props) {
 fetch(
   'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
 )
-// fetch('PortfolioData.json')
+  // fetch('PortfolioData.json')
   .then((r) => r.json())
   .then((data) => ReactDOM.render(<App data={data} />, document.body));

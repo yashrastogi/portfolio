@@ -23,7 +23,7 @@ import React, { useEffect, useState } from 'react';
 export default function Header(props) {
   const useMountEffect = (fun) => useEffect(fun, []);
   useMountEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) handleDarkModeChange();
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) switchDarkMode();
   });
 
   const [state, setState] = useState({
@@ -41,11 +41,11 @@ export default function Header(props) {
       }
     }
   });
-  const handleThemeDialogClose = () => setState({ ...state, themeDialogOpen: false });
-  const handleThemeDialogOpen = () => setState({ ...state, themeDialogOpen: true });
-  const handleDarkModeChange = () => {
-    document.body.className = !state.darkMode ? 'theme-dark' : 'theme-light';
+  
+  const setThemeDialogOpen = (bool) => setState({ ...state, themeDialogOpen: bool });
+  const switchDarkMode = () => {
     setState({ ...state, darkMode: !state.darkMode });
+    document.body.className = !state.darkMode ? 'theme-dark' : 'theme-light';
   };
   const submitColorChange = (e) => {
     const v = e.target.value;
@@ -87,7 +87,7 @@ export default function Header(props) {
     <Dialog
       disableScrollLock
       open={state['themeDialogOpen']}
-      onClose={handleThemeDialogClose}
+      onClose={() => setThemeDialogOpen(false)}
       aria-labelledby="form-dialog-title"
     >
       <DialogTitle id="form-dialog-title">Theme Picker</DialogTitle>
@@ -97,7 +97,7 @@ export default function Header(props) {
             control={
               <StyledSwitch
                 checked={state['darkMode']}
-                onChange={handleDarkModeChange}
+                onChange={switchDarkMode}
                 name="checkedB"
                 aria-label="checkbox"
               />
@@ -124,7 +124,7 @@ export default function Header(props) {
         </FormGroup>
       </DialogContent>
       <DialogActions>
-        <StyledButton onClick={handleThemeDialogClose}>Close</StyledButton>
+        <StyledButton onClick={() => setThemeDialogOpen(false)}>Close</StyledButton>
       </DialogActions>
     </Dialog>
   );
@@ -144,7 +144,7 @@ export default function Header(props) {
             </li>
           ))}
           <li key="theme-config">
-            <a onClick={handleThemeDialogOpen} href="#" className="no-scroll">
+            <a onClick={() => setThemeDialogOpen(true)} href="#" className="no-scroll">
               <b>Theme</b>
             </a>
           </li>
