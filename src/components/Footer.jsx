@@ -15,7 +15,12 @@ export default function Footer(props) {
             <ul>
               {props.data.footerLinks.map((linkDict) => (
                 <li key={linkDict.link}>
-                  <a href={linkDict.link} title={linkDict.iconClass} rel="noreferrer" target="_blank">
+                  <a
+                    href={linkDict.link}
+                    title={linkDict.iconClass.split('-')[1]}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
                     <i className={'fa ' + linkDict.iconClass} aria-hidden="true"></i>
                   </a>
                 </li>

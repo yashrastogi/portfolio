@@ -41,7 +41,7 @@ export default function Header(props) {
       }
     }
   });
-  
+
   const setThemeDialogOpen = (bool) => setState({ ...state, themeDialogOpen: bool });
   const switchDarkMode = () => {
     setState({ ...state, darkMode: !state.darkMode });
