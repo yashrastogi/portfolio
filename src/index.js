@@ -35,8 +35,9 @@ export default function App(props) {
 }
 
 fetch(
-  'https://raw.githubusercontent.com/yashrastogi/portfolio/master/public/PortfolioData.json'
+  process.env.NODE_ENV === 'development'
+    ? 'PortfolioData.json'
+    : process.env.REACT_APP_PRODUCTION_JSON
 )
-  // fetch('PortfolioData.json')
   .then((r) => r.json())
   .then((data) => ReactDOM.render(<App data={data} />, document.body));
