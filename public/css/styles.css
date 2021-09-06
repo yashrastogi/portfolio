@@ -74,24 +74,6 @@
     ----- 3. Global Styles -----
     ----------------------------
 */
-@keyframes load{
-  0%{
-      left: -100%;
-  }
-  100%{
-      left: 100%;
-  }
-}
-.loader{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  border-radius: 0px;
-  background: linear-gradient(90deg, #ffffff, #ff9797);
-  left: -100%;
-  animation: load 2s linear infinite;
-}
 body {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
