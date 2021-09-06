@@ -1,6 +1,6 @@
 const { override, addWebpackAlias } = require('customize-cra');
-const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const addJsonMinimizerWebpackPlugin = (config) => {
   config.plugins.push(new JsonMinimizerPlugin());
@@ -16,7 +16,7 @@ module.exports = override(
   addWebpackAlias({
     react: 'preact/compat',
     'react-dom': 'preact/compat'
-  }),
-  addJsonMinimizerWebpackPlugin,
-  addCssMinimizerPlugin
+  })
+  // addJsonMinimizerWebpackPlugin,
+  // addCssMinimizerPlugin
 );
