@@ -44,23 +44,24 @@ export default function Header(props) {
 
   const setThemeDialogOpen = (bool) => setState({ ...state, themeDialogOpen: bool });
   const switchDarkMode = () => {
-    setState({ ...state, darkMode: !state.darkMode });
     document.body.className = !state.darkMode ? 'theme-dark' : 'theme-light';
+    setState({ ...state, darkMode: !state.darkMode });
   };
-  const submitColorChange = (e) => {
+  const onChangeColor = (e) => {
     const v = e.target.value;
-    setState({ ...state, themeColor: v });
-    document.body.style.setProperty('--base-color', v);
-    document.body.style.setProperty('--base-color-hover', darken(v, 0.1));
-    document.body.style.setProperty('--darken-base-color-15', darken(v, 0.15));
-    document.body.style.setProperty('--darken-base-color-25', darken(v, 0.25));
-    document.body.style.setProperty('--lighten-base-color-25', lighten(v, 0.25));
-    document.body.style.setProperty('--rgba-base-color-0', alpha(v, 0));
-    document.body.style.setProperty(
-      '--rgba-base-color-hover-0-8',
-      alpha(darken(v, 0.1), 0.8)
-    );
+    let newValues = {
+      'base-color': v,
+      'base-color-hover': darken(v, 0.1),
+      'darken-base-color-15': darken(v, 0.15),
+      'darken-base-color-25': darken(v, 0.25),
+      'lighten-base-color-25': lighten(v, 0.25),
+      'rgba-base-color-0': alpha(v, 0),
+      'rgba-base-color-hover-0-8': alpha(darken(v, 0.1), 0.8)
+    };
+    for (const cssProp in newValues)
+      document.body.style.setProperty(`--${cssProp}`, newValues[cssProp]);
     document.querySelector('meta[name="theme-color"]').setAttribute('content', v);
+    setState({ ...state, themeColor: v });
   };
 
   const StyledSwitch = withStyles({
@@ -117,7 +118,7 @@ export default function Header(props) {
                   margin: 4,
                   backgroundColor: state.darkMode ? darkBgColor : '#fff'
                 }}
-                onBlur={submitColorChange}
+                onChange={onChangeColor}
               />
             }
             label="Theme Color"
