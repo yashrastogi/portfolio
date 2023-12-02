@@ -1,20 +1,20 @@
 {
   "personName": "Yash Rastogi",
-  "personField": "Software Engineer",
+  "personField": "Software Development & Cybersecurity Enthusiast",
   "aboutString": "I have knowledge over vast domains of computer science viz. Artificial Intelligence, Cyber Security, Full Stack Web and Software Development and Database Systems which helps me to combine these skills at will. I can easily grasp technical skills and work with the latest technologies and practices. I intend to work with passion and commitment and hope to grow my career prospects while adding value to the organization.",
   "resumeUrl": "https://drive.google.com/file/d/1O4Faml0y_b1fvabz8n-evuU6S5t0AqBt/view?usp=sharing",
   "experienceData": [
     {
       "company": "Ernst & Young",
-      "date": "August 2020 - Present",
+      "date": "October 2020 - July 2023",
       "subtitle": "Consultant - Cyber Security",
-      "description": "•  Delivering vulnerability management lifecycle: Assessment, tracking, and verification\n•  Develop project concepts and maintain optimal workflow"
+      "description": "•  Conducted application security testing for a global MNC using tools such as HCL AppScan, Burp Suite, Checkmarx, and Visual Studio\n•  Delivered successful Vulnerability Assessment and Penetration Testing (VAPT) projects for global clients, identifying critical vulnerabilities and achieving huge future cost savings\n•  Led the nation-wide Vulnerability Management program for one of the top telecom provider, involving meetings with senior stakeholders and automation of configuration audits using Python (resulting in a 20% increase in productivity).\n•  Automated manual tasks using Python, Pandas, Numpy, and other tools, leading to a 40% increase in productivity.\n•  Managed nationwide vulnerability scanning using Nessus, Tenable Security Center, and Linux Shell Scripts, contributing to a 25% increase in client satisfaction and improved cybersecurity practices\n•  Enhanced team skills and knowledge in application security testing and vulnerability management through hosting multiple knowledge transfer sessions, guiding 10+ employees"
     },
     {
       "company": "Ernst & Young",
-      "date": "January 2020 – July 2020",
+      "date": "January 2020 – September 2020",
       "subtitle": "Intern - Cyber Security",
-      "description": "•  Handled vulnerability management lifecycle for new nodes onboarding\n•  Researched SIEM use cases for telecom nodes\n•  Audited data for compliance with ISO 27001 ISMS framework"
+      "description": "•  Improved SIEM effectiveness by researching the internal and external telecom environment, studying telecom nodes, and reviewing whitepapers for potential edge cases in security breaches\n•  Achieved a 10% reduction in false positives, enhancing the accuracy of the Security Information and Event Management (SIEM) system\n•  Conducted audits on client data, ensuring compliance with ISO 27001:2013 Access Control and Asset Management standards"
     }
   ],
   "educationData": [
