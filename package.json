@@ -1,7 +1,7 @@
 {
   "homepage": "http://yashrastogi.tk",
   "name": "portfolio",
-  "version": "1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
