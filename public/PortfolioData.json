@@ -1,0 +1,156 @@
+{
+    "personName": "Yash Rastogi",
+    "personPictureUrl": "https://media.licdn.com/dms/image/v2/D5603AQGfKEwv8XELYQ/profile-displayphoto-shrink_800_800/B56ZVuIyuFGUAc-/0/1741309554666?e=1748476800&v=beta&t=0ejyAOEd77TIPblHTQoSjQG-jrkMXVZLH1-AsB_U2jA",
+    "personField": "Software Development & Cybersecurity Enthusiast",
+    "aboutString": "I have expertise across multiple domains of computer science, including Artificial Intelligence, Cybersecurity, Full Stack Web and Software Development, and Database Systems. This diverse skill set allows me to integrate technologies effectively. I am highly adaptable to new technical skills and emerging industry trends. My goal is to contribute with passion and commitment while advancing my career and adding value to the organization.",
+    "resumeUrl": "https://bit.ly/3X7j57G",
+    "experienceData": [
+      {
+        "company": "Ernst & Young",
+        "date": "October 2020 - July 2023",
+        "subtitle": "Consultant - Cyber Security",
+        "description": "• Conducted application security testing for a global MNC using tools such as HCL AppScan, Burp Suite, Checkmarx, and Visual Studio.\n• Delivered successful Vulnerability Assessment and Penetration Testing (VAPT) projects for global clients, identifying critical vulnerabilities and achieving substantial future cost savings.\n• Led a nationwide Vulnerability Management program for a top telecom provider, coordinating with senior stakeholders and automating configuration audits using Python (resulting in a 20% increase in productivity).\n• Automated manual security tasks using Python, Pandas, and Numpy, leading to a 40% productivity boost.\n• Managed enterprise-wide vulnerability scanning using Nessus, Tenable Security Center, and Linux Shell Scripts, improving cybersecurity practices and increasing client satisfaction by 25%.\n• Conducted knowledge-sharing sessions on application security testing and vulnerability management, mentoring 10+ employees."
+      },
+      {
+        "company": "Ernst & Young",
+        "date": "January 2020 – September 2020",
+        "subtitle": "Intern - Cyber Security",
+        "description": "• Improved SIEM effectiveness by analyzing the telecom environment, studying network nodes, and reviewing whitepapers to identify potential security breach scenarios.\n• Achieved a 10% reduction in false positives, enhancing the accuracy of the Security Information and Event Management (SIEM) system.\n• Conducted audits on client data to ensure compliance with ISO 27001:2013 standards for Access Control and Asset Management."
+      }
+    ],
+    "educationData": [
+      {
+        "name": "NIIT University",
+        "date": "2016 - 2020",
+        "subtitle": "Bachelor of Technology - Computer Science",
+        "score": "7.85 CGPA"
+      },
+      {
+        "name": "Delhi Public School Gurgaon",
+        "date": "2013 - 2015",
+        "subtitle": "Class Xth - XIIth",
+        "score": "N/A"
+      }
+    ],
+    "skillsData": {
+      "Frontend Development": [
+        "Flutter",
+        "Dart",
+        "React",
+        "Redux",
+        "JavaScript",
+        "TypeScript",
+        "jQuery"
+      ],
+      "Backend Development": [
+        "Node.js",
+        "MongoDB",
+        "Java - Spring MVC",
+        "Servlets",
+        "Swing",
+        "Core Java",
+        "Android Development"
+      ],
+      "Cybersecurity": [
+        "Burp Suite",
+        "Acunetix",
+        "nmap",
+        "SQLi",
+        "Nessus",
+        "Tenable Security Center"
+      ],
+      "Programming Languages": [
+        "C",
+        "Python",
+        "Java",
+        "MATLAB",
+        "Bash Shell"
+      ]
+    },
+    "projectsData": [
+      {
+        "image": "https://placehold.co/600x400/e2e8f0/475569?text=Cloud+Storage",
+        "name": "Cloudy Cloud Storage Web SPA",
+        "description": "Built a cloud storage application with MD5 hash-based deduplication using the MERN (MongoDB, Express, ReactJS, Node.js) stack.",
+        "link": "https://nu-capstone-project.github.io/cloudy/#/",
+        "linkType": "project",
+        "technologies": [
+          "MongoDB",
+          "Express.js",
+          "React",
+          "Node.js",
+          "MD5 Hashing"
+        ]
+      },
+      {
+        "image": "https://placehold.co/600x400/e2e8f0/475569?text=Android+App",
+        "name": "Android Video Encryption and Sharing App",
+        "description": "Developed a secure video-sharing app where users can protect their videos with AES encryption before sharing.",
+        "link": "https://github.com/yashrastogi/securivo",
+        "linkType": "source",
+        "technologies": [
+          "Android",
+          "Java",
+          "AES Encryption"
+        ]
+      },
+      {
+        "image": "https://placehold.co/600x400/e2e8f0/475569?text=Food+App",
+        "name": "Restaurant Management/Food Ordering App",
+        "description": "Created a food ordering app for a local campus cafe, enabling remote order placement.",
+        "link": "https://github.com/yashrastogi/CampusCafe",
+        "linkType": "source",
+        "technologies": [
+          "Android",
+          "Java",
+          "Firebase"
+        ]
+      },
+      {
+        "image": "https://placehold.co/600x400/e2e8f0/475569?text=Chess+App",
+        "name": "Chess Web App",
+        "description": "Designed a browser-based Chess game that allows users to play on any device.",
+        "link": "https://yashrastogi.github.io/chessboard",
+        "linkType": "project",
+        "technologies": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "image": "https://placehold.co/600x400/e2e8f0/475569?text=DES+Encryption",
+        "name": "DES Swing",
+        "description": "Implemented the DES encryption algorithm using Java and Swing, allowing users to encrypt text.",
+        "link": "https://github.com/yashrastogi/DES-Swing",
+        "linkType": "source",
+        "technologies": [
+          "Java",
+          "Swing",
+          "DES Encryption"
+        ]
+      },
+      {
+        "image": "https://placehold.co/600x400/e2e8f0/475569?text=Network+Research",
+        "name": "Research & Development - Improving University Network Performance",
+        "description": "Analyzed the campus wireless network and implemented optimizations to improve performance.",
+        "linkType": "none",
+        "technologies": [
+          "Networking",
+          "Wireless Optimization",
+          "Performance Analysis"
+        ]
+      }
+    ],
+    "formspreeEndpoint": "https://formspree.io/f/xleaabeq",
+    "footerLinks": [
+      {
+        "link": "https://github.com/yashrastogi",
+        "iconClass": "fa-github"
+      },
+      {
+        "link": "https://linkedin.com/in/yashrastogi-ml",
+        "iconClass": "fa-linkedin"
+      }
+    ]
+  }
