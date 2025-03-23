@@ -53,13 +53,13 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    // This simulates fetching the data
     const fetchData = async () => {
       try {
         fetch(
           process.env.NODE_ENV === 'development'
             ? 'PortfolioData.json'
-            : process.env.REACT_APP_PRODUCTION_JSON
+            : 'PortfolioData.json'
+            // : process.env.REACT_APP_PRODUCTION_JSON
         )
           .then((r) => r.json())
           .then((data) => setData(data));
