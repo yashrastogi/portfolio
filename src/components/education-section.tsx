@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { GraduationCapIcon, NewspaperIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -24,6 +24,14 @@ interface Props {
 
 export function EducationSection({ educations, certifications }: Props) {
   const [activeTab, setActiveTab] = useState<"education" | "certifications">("education");
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState("auto");
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setHeight(`${contentRef.current.scrollHeight}px`);
+    }
+  }, [activeTab, educations, certifications]);
 
   return (
     <section id="education" className="section-container">
@@ -35,67 +43,63 @@ export function EducationSection({ educations, certifications }: Props) {
       </div>
       
       <div className="flex justify-center space-x-4 mb-6">
-        <Button
-          variant={activeTab === "education" ? "default" : "outline"}
-          onClick={() => setActiveTab("education")}
-        >
+        <Button variant={activeTab === "education" ? "default" : "outline"} onClick={() => setActiveTab("education")}>
           Education
         </Button>
-        <Button
-          variant={activeTab === "certifications" ? "default" : "outline"}
-          onClick={() => setActiveTab("certifications")}
-        >
+        <Button variant={activeTab === "certifications" ? "default" : "outline"} onClick={() => setActiveTab("certifications")}>
           Certifications
         </Button>
       </div>
       
-      <div className="max-w-3xl mx-auto space-y-8">
-        {activeTab === "education" && educations.map((edu, index) => (
-          <div
-            key={index}
-            className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 opacity-0 animate-fade-in"
-            style={{ animationDelay: `${(index + 1) * 150}ms`, animationFillMode: 'forwards' }}
-          >
-            <div className="flex-shrink-0">
-              <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
-                <GraduationCapIcon className="h-6 w-6 text-primary" />
+      <div className="max-w-3xl mx-auto transition-all duration-500" style={{ height }}>
+        <div ref={contentRef} className="space-y-8">
+          {activeTab === "education" && educations.map((edu, index) => (
+            <div
+              key={index}
+              className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 rounded-2xl shadow-lg border border-gray-200 opacity-0 animate-fade-in"
+              style={{ animationDelay: `${(index + 1) * 150}ms`, animationFillMode: 'forwards' }}
+            >
+              <div className="flex-shrink-0">
+                <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
+                  <GraduationCapIcon className="h-6 w-6 text-primary" />
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-display font-semibold">{edu.name}</h3>
+                <p className="text-sm font-medium text-muted-foreground mb-2">{edu.date}</p>
+                <p className="font-medium mb-2">{edu.subtitle}</p>
+                {edu.score !== "N/A" && (
+                  <p className="text-sm text-primary">{edu.score}</p>
+                )}
               </div>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-display font-semibold">{edu.name}</h3>
-              <p className="text-sm font-medium text-muted-foreground mb-2">{edu.date}</p>
-              <p className="font-medium mb-2">{edu.subtitle}</p>
-              {edu.score !== "N/A" && (
-                <p className="text-sm text-primary">{edu.score}</p>
-              )}
-            </div>
-          </div>
-        ))}
+          ))}
 
-        {activeTab === "certifications" && certifications.map((cert, index) => (
-          <div
-            key={index}
-            className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 opacity-0 animate-fade-in"
-            style={{ animationDelay: `${(index + 1) * 150}ms`, animationFillMode: 'forwards' }}
-          >
-            <div className="flex-shrink-0">
-              {cert.imageUrl ? (
-                <img src={cert.imageUrl} alt={cert.name} className="h-14 w-14 rounded-full object-cover filter grayscale" />
-              ) : (
-                <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
-                  <NewspaperIcon className="h-6 w-6 text-primary" />
-                </div>
-              )}
+          {activeTab === "certifications" && certifications.map((cert, index) => (
+            <div
+              key={index}
+              className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 rounded-2xl shadow-lg border border-gray-200 opacity-0 animate-fade-in"
+              style={{ animationDelay: `${(index + 1) * 150}ms`, animationFillMode: 'forwards' }}
+            >
+              <div className="flex-shrink-0">
+                {cert.imageUrl ? (
+                  <img src={cert.imageUrl} alt={cert.name} className="h-14 w-14 rounded-full object-cover filter grayscale" />
+                ) : (
+                  <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
+                    <NewspaperIcon className="h-6 w-6 text-primary" />
+                  </div>
+                )}
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-display font-semibold">{cert.name}</h3>
+                <p className="text-sm font-medium text-muted-foreground mb-2">{cert.date}</p>
+                <p className="font-medium">{cert.issuer}</p>
+              </div>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-display font-semibold">{cert.name}</h3>
-              <p className="text-sm font-medium text-muted-foreground mb-2">{cert.date}</p>
-              <p className="font-medium">{cert.issuer}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
