@@ -30,6 +30,13 @@ interface PersonData {
     subtitle: string;
     score: string;
   }>;
+  certificationsData: Array<{
+    name: string;
+    date: string;
+    description: string;
+    imageUrl?: string;  
+    issuer: string;
+  }>;
   skillsData: {
     [key: string]: string[];
   };
@@ -100,7 +107,7 @@ const Index = () => {
         
         <ExperienceSection experiences={data.experienceData} />
         
-        <EducationSection educations={data.educationData} />
+        <EducationSection educations={data.educationData} certifications={data.certificationsData}/>
         
         <ProjectsSection projects={data.projectsData} />
         

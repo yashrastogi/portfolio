@@ -18,6 +18,9 @@
         "description": "• Improved SIEM effectiveness by analyzing the telecom environment, studying network nodes, and reviewing whitepapers to identify potential security breach scenarios.\n• Achieved a 10% reduction in false positives, enhancing the accuracy of the Security Information and Event Management (SIEM) system.\n• Conducted audits on client data to ensure compliance with ISO 27001:2013 standards for Access Control and Asset Management."
       }
     ],
+    "certificationsData": [
+      {"name": "Certified Ethical Hacker (CEH)", "date": "2019", "imageUrl": "https://cdn.prod.website-files.com/659d67e0f409dcb2ab66a43f/661976f404f636a5806bb899_CEH_Badge.png"}
+    ],
     "educationData": [
       {
         "name": "NIIT University",
@@ -149,7 +152,7 @@
         "iconClass": "fa-github"
       },
       {
-        "link": "https://linkedin.com/in/yashrastogi-ml",
+        "link": "https://linkedin.com/in/-yashrastogi",
         "iconClass": "fa-linkedin"
       }
     ]
