@@ -61,7 +61,7 @@ export function ContactSection({ formspreeEndpoint }: { formspreeEndpoint: strin
   };
 
   return (
-    <section id="contact" className="section-container">
+    <section id="contact" className="section-container py-20">
       <div className="text-center mb-16 opacity-0 animate-fade-in" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
         <h2 className="section-title">Get In Touch</h2>
         <p className="section-subtitle">Let's talk about your project</p>

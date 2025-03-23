@@ -7,7 +7,7 @@ export function SkillsSection({ skills }: { skills: SkillCategory }) {
   const categories = Object.keys(skills);
   
   return (
-    <section id="skills" className="section-container">
+    <section id="skills" className="section-container py-20">
       <div className="text-center mb-10 opacity-0 animate-fade-in" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
         <h2 className="section-title">My Skills</h2>
         <p className="section-subtitle">What I bring to the table</p>
