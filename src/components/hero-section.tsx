@@ -1,6 +1,7 @@
 
 import { ArrowDownIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface HeroProps {
   name: string;
@@ -10,6 +11,8 @@ interface HeroProps {
 }
 
 export function HeroSection({ name, pictureUrl, field, resumeUrl }: HeroProps) {
+  const isMobile = useIsMobile();
+
   return (
     <section id="home" className="min-h-screen pt-20 flex items-center">
       <div className="max-container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -34,26 +37,28 @@ export function HeroSection({ name, pictureUrl, field, resumeUrl }: HeroProps) {
             </Button>
           </div>
         </div>
-        
+
         <div className="relative order-1 md:order-2 flex justify-center md:justify-end animate-fade-in animate-delay-300">
           <div className="relative w-60 h-60 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-background shadow-xl">
-            <img 
-              src={pictureUrl} 
-              alt={name} 
+            <img
+              src={pictureUrl}
+              alt={name}
               className="w-full h-full object-cover object-center"
             />
           </div>
           <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-84 md:h-84 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 blur-3xl" />
         </div>
       </div>
-      
-      <a
-        href="#about"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 transition-opacity duration-300"
-      >
-        <span className="text-sm mb-2">Scroll down</span>
-        <ArrowDownIcon className="h-5 w-5 animate-bounce" />
-      </a>
+
+      {!isMobile && (
+        <a
+          href="#about"
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-80 hover:opacity-100 transition-opacity duration-300"
+        >
+          <span className="text-sm mb-2">Scroll down</span>
+          <ArrowDownIcon className="h-5 w-5 animate-bounce" />
+        </a>
+      )}
     </section>
   );
 }
