@@ -74,13 +74,13 @@ const Index = () => {
     fetchData();
   }, []);
   
-  if (loading) {
+  if (loading || !data) {
     return <Loading />;
   }
   
-  if (!data) {
-    return <div className="min-h-screen flex items-center justify-center">Failed to load data</div>;
-  }
+  // if (!data) {
+  //   return <div className="min-h-screen flex items-center justify-center">Failed to load data</div>;
+  // }
 
   return (
     <ThemeProvider defaultTheme="light">
