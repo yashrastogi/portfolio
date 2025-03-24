@@ -1,4 +1,3 @@
-
 import { ArrowDownIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -30,7 +29,12 @@ export function HeroSection({ name, pictureUrl, field, resumeUrl }: HeroProps) {
             <Button asChild size="lg" className="rounded-full">
               <a href="#contact">Get in touch</a>
             </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="rounded-full"
+            >
               <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
                 View Resume
               </a>
@@ -39,14 +43,18 @@ export function HeroSection({ name, pictureUrl, field, resumeUrl }: HeroProps) {
         </div>
 
         <div className="relative order-1 md:order-2 flex justify-center md:justify-end animate-fade-in animate-delay-300">
-          <div className="relative w-60 h-60 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-background shadow-xl">
-            <img
-              src={pictureUrl}
-              alt={name}
-              className="w-full h-full object-cover object-center"
-            />
+          <div className="relative">
+            <div className="absolute inset-0 -z-10 flex justify-center items-center">
+              <div className="w-64 h-64 md:w-84 md:h-84 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 blur-3xl" />
+            </div>
+            <div className="relative w-60 h-60 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-background shadow-xl">
+              <img
+                src={pictureUrl}
+                alt={name}
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
-          <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-84 md:h-84 rounded-full bg-gradient-to-r from-primary/20 to-primary/10 blur-3xl" />
         </div>
       </div>
 
