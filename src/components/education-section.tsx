@@ -43,7 +43,7 @@ export function EducationSection({ educations, certifications }: Props) {
         </p>
       </div>
       
-      <div className="relative flex justify-center mb-6 bg-gray-100 p-1 rounded-full w-64">
+      <div className="relative flex justify-center mb-6 bg-gray-200 dark:bg-gray-800 p-1 rounded-full w-64">
         <div
           className={cn(
             "absolute top-1 bottom-1 left-1 w-1/2 bg-primary rounded-full transition-all duration-300",
@@ -51,13 +51,13 @@ export function EducationSection({ educations, certifications }: Props) {
           )}
         />
         <button
-          className={cn("relative z-10 flex-1 text-center py-2 text-sm font-medium transition", activeTab === "education" ? "text-white" : "text-gray-500")}
+          className={cn("relative z-10 flex-1 text-center py-2 text-sm font-medium transition", activeTab === "education" ? "text-white dark:text-gray-700" : "text-gray-700 dark:text-gray-300")}
           onClick={() => setActiveTab("education")}
         >
           Education
         </button>
         <button
-          className={cn("relative z-10 flex-1 text-center py-2 text-sm font-medium transition", activeTab === "certifications" ? "text-white" : "text-gray-500")}
+          className={cn("relative z-10 flex-1 text-center py-2 text-sm font-medium transition", activeTab === "certifications" ? "text-white dark:text-gray-700" : "text-gray-700 dark:text-gray-300")}
           onClick={() => setActiveTab("certifications")}
         >
           Certifications
@@ -69,7 +69,7 @@ export function EducationSection({ educations, certifications }: Props) {
           {activeTab === "education" && educations.map((edu, index) => (
             <div
               key={index}
-              className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 rounded-2xl shadow-lg border border-gray-200 opacity-0 animate-fade-in"
+              className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 animate-fade-in"
               style={{ animationDelay: `${(index + 1) * 150}ms`, animationFillMode: 'forwards' }}
             >
               <div className="flex-shrink-0">
@@ -92,7 +92,7 @@ export function EducationSection({ educations, certifications }: Props) {
           {activeTab === "certifications" && certifications.map((cert, index) => (
             <div
               key={index}
-              className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 rounded-2xl shadow-lg border border-gray-200 opacity-0 animate-fade-in"
+              className="glass p-6 md:p-8 flex flex-col md:flex-row gap-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 animate-fade-in"
               style={{ animationDelay: `${(index + 1) * 150}ms`, animationFillMode: 'forwards' }}
             >
               <div className="flex-shrink-0">
