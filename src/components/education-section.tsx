@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { GraduationCapIcon, NewspaperIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface EducationItem {
   name: string;
@@ -34,24 +35,36 @@ export function EducationSection({ educations, certifications }: Props) {
   }, [activeTab, educations, certifications]);
 
   return (
-    <section id="education" className="section-container py-20">
-      <div className="text-center mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
+    <section id="education" className="section-container py-20 flex flex-col items-center">
+      <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
         <h2 className="section-title">{activeTab === "education" ? "Education" : "Certifications"}</h2>
         <p className="section-subtitle">
           {activeTab === "education" ? "My academic background" : "My professional certifications"}
         </p>
       </div>
       
-      <div className="flex justify-center space-x-4 mb-6">
-        <Button variant={activeTab === "education" ? "default" : "outline"} onClick={() => setActiveTab("education")}>
+      <div className="relative flex justify-center mb-6 bg-gray-100 p-1 rounded-full w-64">
+        <div
+          className={cn(
+            "absolute top-1 bottom-1 left-1 w-1/2 bg-primary rounded-full transition-all duration-300",
+            activeTab === "certifications" && "translate-x-full"
+          )}
+        />
+        <button
+          className={cn("relative z-10 flex-1 text-center py-2 text-sm font-medium transition", activeTab === "education" ? "text-white" : "text-gray-500")}
+          onClick={() => setActiveTab("education")}
+        >
           Education
-        </Button>
-        <Button variant={activeTab === "certifications" ? "default" : "outline"} onClick={() => setActiveTab("certifications")}>
+        </button>
+        <button
+          className={cn("relative z-10 flex-1 text-center py-2 text-sm font-medium transition", activeTab === "certifications" ? "text-white" : "text-gray-500")}
+          onClick={() => setActiveTab("certifications")}
+        >
           Certifications
-        </Button>
+        </button>
       </div>
       
-      <div className="max-w-3xl mx-auto transition-all duration-500" style={{ height }}>
+      <div className="max-w-3xl w-full transition-all duration-500" style={{ height }}>
         <div ref={contentRef} className="space-y-8">
           {activeTab === "education" && educations.map((edu, index) => (
             <div
