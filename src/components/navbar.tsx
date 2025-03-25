@@ -73,7 +73,7 @@ function MobileMenu() {
       </button>
       
       {isOpen && (
-        <div className="absolute right-0 mt-2 py-2 w-48 glass rounded-xl shadow-xl animate-fade-in z-50">
+        <div className="absolute right-0 mt-2 py-2 w-48 glass bg-background/90 rounded-xl shadow-xl animate-fade-in z-50">
           <a href="#about" className="block px-4 py-2 text-sm hover:bg-secondary/50 rounded-md mx-2" onClick={() => setIsOpen(false)}>About</a>
           <a href="#skills" className="block px-4 py-2 text-sm hover:bg-secondary/50 rounded-md mx-2" onClick={() => setIsOpen(false)}>Skills</a>
           <a href="#experience" className="block px-4 py-2 text-sm hover:bg-secondary/50 rounded-md mx-2" onClick={() => setIsOpen(false)}>Experience</a>
