@@ -23,6 +23,12 @@
     ],
     "educationData": [
       {
+        "name": "University of Florida",
+        "date": "2025 - 2027",
+        "subtitle": "Master of Science in Computer Science",
+        "score": "N/A"
+      },
+      {
         "name": "NIIT University",
         "date": "2016 - 2020",
         "subtitle": "Bachelor of Technology in Computer Science & Engineering",
