@@ -77,6 +77,22 @@
       ]
     },
     "projectsData": [
+        {
+          "image": "https://placehold.co/600x400/e2e8f0/475569?text=AI+Knowledge+Assistant",
+          "name": "AI-Powered Knowledge Assistant with RAG and Multi-Agent Workflow",
+          "description": "Developed an intelligent Q&A system leveraging Python, LangChain, and Retrieval-Augmented Generation (RAG) to provide accurate answers from diverse, domain-specific knowledge bases. Engineered scalable embedding pipelines for unstructured documents using vector databases and hybrid search techniques. Implemented a multi-agent workflow with LangChain to orchestrate complex information synthesis and problem-solving. Integrated with simulated enterprise APIs via FastAPI and a TypeScript/React frontend, showcasing full-stack development expertise.",
+          "link": "https://github.com/yashrastogi", 
+          "linkType": "source",
+          "technologies": [
+            "Python",
+            "LangChain",
+            "Retrieval-Augmented Generation (RAG)",
+            "Vector Databases",
+            "FastAPI",
+            "TypeScript",
+            "React"
+          ]
+        },
       {
         "image": "https://placehold.co/600x400/e2e8f0/475569?text=Cloud+Storage",
         "name": "Cloudy Cloud Storage Web SPA",
