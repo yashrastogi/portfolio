@@ -132,18 +132,6 @@
         ]
       },
       {
-        "image": "https://placehold.co/600x400/e2e8f0/475569?text=Chess+App",
-        "name": "Chess Web App",
-        "description": "Designed a browser-based Chess game that allows users to play on any device.",
-        "link": "https://yashrastogi.github.io/chessboard",
-        "linkType": "project",
-        "technologies": [
-          "JavaScript",
-          "HTML",
-          "CSS"
-        ]
-      },
-      {
         "image": "https://placehold.co/600x400/e2e8f0/475569?text=DES+Encryption",
         "name": "DES Swing",
         "description": "Implemented the DES encryption algorithm using Java and Swing, allowing users to encrypt text.",
