@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 100 100">
+  <title>YR Software Builder Logo</title>
+  
+  <circle cx="50" cy="50" r="50" fill="#0f172a"/>
+  
+  <path d="M 18 38 L 10 50 L 18 62 M 82 38 L 90 50 L 82 62" fill="none" stroke="#475569" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <path d="M 28 35 L 38 48 L 38 65 M 48 35 L 38 48" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <path d="M 54 65 L 54 35 L 62 35 L 66 39 L 66 44 L 62 48 L 54 48 M 58 48 L 68 65" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <circle cx="76" cy="26" r="3" fill="#10b981"/>
+</svg>
